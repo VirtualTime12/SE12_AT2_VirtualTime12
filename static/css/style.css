@@ -5,27 +5,70 @@
   box-sizing: border-box;
 }
 body {
-  background: #fdfdfd;
+  background: url("../images/background.jpg") center center no-repeat fixed;
+  background-size: cover;
   font-family: "Nunito", sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 main {
-  max-width: 900px;
+  /* max-width: 900px; */
   margin: auto;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   text-align: center;
+}
+.main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px;
+  /* border: 1px solid #ccc; */
+  background-color: #f9f9f9;
+  gap: 0px;
+}
+.text-container {
+  flex: 1;
+  padding-right: 10px;
+  background-color: lightgray;
+  border: 2px solid black;
+}
+.image-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.image-button-container img {
+  max-width: 75%;
+  height: auto;
+  display: block;
+  box-shadow: 20px 20px 5px gray;
+}
+.image-button-container button {
+  padding: 25px 50px;
+  border-radius: 50px;
+  background-color: #3ebbc7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
 }
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: lightgray;
 }
 nav img {
-  height: 100px;
+  height: 75px;
+  margin-left: 1rem;
 }
 nav ul {
   list-style: none;
   display: flex;
+  font-size: 1.25rem;
 }
 nav li {
   margin-right: 1rem;
@@ -41,6 +84,7 @@ nav ul li a:hover {
 nav h1 {
   color: #106d69;
   margin-bottom: 0.5rem;
+  font-size: 2.5rem;
 }
 .container {
   display: grid;
@@ -117,17 +161,18 @@ form {
 }
 .banner-container {
   width: 100%;
-  height: 400px;
+  height: 550px;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 5rem;
 }
 .banner-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  filter: blur(0px) brightness(1);
+  filter: blur(0px) brightness(0.7);
   transform: scale(1);
   transition:
     filter 0.5s ease,
@@ -139,7 +184,7 @@ form {
   color: white;
   text-align: center;
 }
-.banner-container:hover banner-image {
-  filter: blur(8px) brightness(0.7);
+/* .banner-container:hover {
+  filter: blur(8px) brightness(0.5);
   transform: scale(1.1);
-}
+} */

@@ -6,14 +6,14 @@ import database_manager as dbHandler
 app = Flask(__name__)
 
 
-# @app.route("/home.html", methods=["GET"])
-# @app.route("/", methods=["POST", "GET"])
-# def home():
-#     return render_template("/home.html", content=dbHandler.listExtension())
+@app.route("/home.html", methods=["GET"])
+@app.route("/", methods=["POST", "GET"])
+def home():
+    return render_template("/home.html", content=dbHandler.listExtension())
 
 
 @app.route("/index.html", methods=["GET"])
-@app.route("/", methods=["POST", "GET"])
+# @app.route("/", methods=["POST", "GET"])
 def index():
     return render_template("/index.html", content=dbHandler.listExtension())
 

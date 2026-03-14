@@ -1,12 +1,43 @@
 {% extends 'layout.html' %} {% block content %}
+<style>
+  body {
+    font-family: "Nunito", sans-serif;
+  }
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 5rem;
+    color: #3ebbc7;
+  }
+  p2 {
+    font-size: 1rem;
+  }
+</style>
 <div class="banner-container">
   <img
-    src="static/images/hololive-super-exp-2023.webp"
+    src="static/images/hololive-super-expo-2023.jpg"
     alt="Hololive Image"
     class="banner-image"
   />
   <div class="banner-content">
-    <h1>All about Hololive</h1>
-    <p>Description</p>
+    <h1>Hololive</h1>
+    <p>Home to all the best V-tuber talents the world has ever seen</p>
   </div>
 </div>
+<div class="main-container">
+  <div class="text-container">
+    <h2>About</h2>
+    <p>Explore the endless fun</p>
+    <p>within the world of Hololive!</p>
+  </div>
+  <div class="image-button-container">
+    <img
+      src="https://dzt1km7tv28ex.cloudfront.net/static/shop/special/hololive_meet2024/hero_mobile_v2.jpg"
+      alt="Hololive image"
+    />
+    <button>View More</button>
+  </div>
+</div>
+<p2>Hello!!!</p2>
+{% endblock %}
