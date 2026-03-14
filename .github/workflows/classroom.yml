@@ -26,3 +26,5 @@ jobs:
         PYTHON-TEST_RESULTS: "${{steps.python-test.outputs.result}}"
       with:
         runners: python-test
+env: 
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
