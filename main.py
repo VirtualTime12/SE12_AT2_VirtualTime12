@@ -9,8 +9,11 @@ app = Flask(__name__)
 @app.route("/home.html", methods=["GET"])
 @app.route("/", methods=["POST", "GET"])
 def home():
-    return render_template("/home.html", content=dbHandler.listExtension())
+    return render_template("/home.html")
 
+@app.route("/about.html", methods=["GET"])
+def about():
+    return render_template("/about.html")
 
 @app.route("/index.html", methods=["GET"])
 # @app.route("/", methods=["POST", "GET"])
