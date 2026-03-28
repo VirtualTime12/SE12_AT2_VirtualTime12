@@ -1,10 +1,37 @@
 import sqlite3 as sql
 
 
-def listExtension():
+def listVtuberbygeneration(generation):
+    with sql.connect("database/data_source.db") as con:
+        cur = con.cursor()
+        data = cur.execute(
+            "SELECT * FROM vtubers WHERE generation = ?", (generation,)
+        ).fetchall()
+    return data
+
+
+def listVtuberbybranch(branch):
+    with sql.connect("database/data_source.db") as con:
+        cur = con.cursor()
+        data = cur.execute(
+            "SELECT * FROM vtubers WHERE branch = ?", (branch,)
+        ).fetchall()
+    return data
+
+
+# def listVtuberbyname(name):
+#     with sql.connect("database/data_source.db") as con:
+#         cur = con.cursor()
+#         data = cur.execute(
+#             "SELECT * FROM vtubers WHERE name LIKE ?", (name,)
+#         ).fetchall()
+#     return data
+
+
+def listVtubers():
     con = sql.connect("database/data_source.db")
     cur = con.cursor()
-    data = cur.execute("SELECT * FROM extension").fetchall()
+    data = cur.execute("SELECT * FROM vtubers").fetchall()
     con.close()
     return data
 

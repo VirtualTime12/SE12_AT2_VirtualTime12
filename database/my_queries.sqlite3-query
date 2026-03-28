@@ -20,3 +20,86 @@ INSERT INTO extension(extID,name,hyperlink,about,image,language) VALUES (4,"SQLi
 -- SELECT * FROM extension WHERE language LIKE '#BASH';
 
 -- DROP TABLE contact_list
+
+DROP TABLE vtubers;
+CREATE TABLE vtubers(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, generation TEXT NOT NULL, branch TEXT NOT NULL, debut_date TEXT NOT NULL, description TEXT NOT NULL, birthday TEXT NOT NULL, height INTEGER NOT NULL, img_url TEXT NOT NULL, youtube TEXT NOT NULL, hololive_url TEXT NOT NULL);
+
+-- JP GEN 0
+INSERT INTO vtubers(name, generation, branch, debut_date, description, birthday, height, img_url, youtube, hololive_url) 
+VALUES ("Tokino Sora", "Generation 0", "Japan", "September 7, 2017", "Hololive Production's first virtual idol, debuting on September 7, 2017. She loves horror games and singing, and has always dreamed of performing in Yokohama Arena. She signed a record deal with Victor Entertainment in March 2019. She is active in various forms of media, such as appearing in Watanuki-san Chi no and hosting Sora Ao to!, a radio show. She held her first solo concert, Dream!, on October 6, 2019, taking one step closer to her ultimate goal.", "May 15", 160, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Tokino-Sora_pr-img_01.png", "https://www.youtube.com/channel/UCp6993wxpyDPHUpavwDFqgg", "https://hololive.hololivepro.com/en/talents/tokino-sora/"),
+("Robocosan", "Generation 0", "Japan", "March 9, 2018", "Hellobo! It's me, the high-spec Hololive VTuber Roboco! I showed up from a faraway wasteland having lost all my memories. I believe I'm pretty high-spec, but some rumors say that it'd be more accurate to call me 'broken'... lol. I'm a gamer gal whose defining trait is a very human, emotional singing voice! Am I really a robot? Whoops, looks like my arm came off...", "May 23", 154, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Robocosan_pr-img_01.png", "https://www.youtube.com/channel/UCDqI2jOz0weumE8s7paEk6g", "https://hololive.hololivepro.com/en/talents/roboco-san/"),
+("Hoshimachi Suisei", "Generation 0", "Japan", "March 22, 2018", "A virtual idol with an exceptional love for songs and idols. She works tirelessly towards her dreams of performing in Tokyo Dome one day.", "March 22", 160, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Hoshimachi-Suisei_pr-img_01.png", "https://www.youtube.com/channel/UC5CwaMl1eIgY8h02uZw7u8A","https://hololive.hololivepro.com/en/talents/hoshimachi-suisei/"),
+("Sakura Miko", "Generation 0", "Japan", "August 1, 2018", "A shrine maiden from the Virtual Sakura Shrine. With a vivid admiration for idols, she constantly pushes herself to greater heights to become a top elite shrine maiden-idol like no other! Well... a self-proclaimed 'elite,' to be exact. Fans would think 'clutz' fits her better...", "March 5", 152, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Sakura-Miko_pr-img_01.png", "https://www.youtube.com/channel/UC-hM6YJuNYVAmUWxeIr9FeA", "https://hololive.hololivepro.com/en/talents/sakuramiko/"),
+("AZKi", "Generation 0", "Japan", "November 15, 2018", "A diva who became reborn into the virtual world in order to fabricate a new world. No matter the time, place, or position, she warps through all the barricades with her dazzling talent.", "July 1", 158, "https://hololive.hololivepro.com/wp-content/uploads/2024/12/AZKi_pr-img_01.png", "https://www.youtube.com/channel/UC0TXe_LYZ4scaW2XMyi5_kw", "https://hololive.hololivepro.com/en/talents/azki/");
+
+-- JP GEN 1
+INSERT INTO vtubers(name, generation, branch, debut_date, description, birthday, height, img_url, youtube, hololive_url) 
+VALUES ("Akai Haato", "Generation 1", "Japan", "June 2, 2018", "A sassy kouhai. She is often prickly, but she'll try to get a lot of attention from those who have made friends with her. She loves red ribbons and heart shapes, and she'll wear them often in her hair and on her clothes.", "August 10", 154, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Akai-Haato_pr-img_01.png", "https://www.youtube.com/channel/UC1CfXB_kRs3C-zaeTG3oGyg", "https://hololive.hololivepro.com/en/talents/akai-haato/"),
+("Aki Rosenthal", "Generation 1", "Japan", "June 1, 2018", "A half-elf from another world, she has an insatiable curiosity and cannot resist exploring anything that piques her interest. Her trademark pigtails float due to some sort of supernatural power.", "February 17", 162, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Aki-Rosenthal_pr-img_01.png", "https://www.youtube.com/channel/UCFTLzh12_nrtzqBPsTCqenA", "https://hololive.hololivepro.com/en/talents/aki-rosenthal/"),
+("Shirakami Fubuki", "Generation 1", "Japan", "June 1, 2018", "White-haired animal-eared otaku fox. She loves talking with people and will be happy if you give her the time of day. She aims to become a top otaku idol while enjoying each and every day.", "October 5", 155, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Shirakami-Fubuki_pr-img_01.webp", "https://www.youtube.com/channel/UCdn5BQ06XqgXoAxIhbqw5Rg", "https://hololive.hololivepro.com/en/talents/shirakami-fubuki/"),
+("Natsuiro Matsuri", "Generation 1", "Japan", "June 1, 2018", "A rookie member of her school cheerleading team. Her cheerful, energetic, and affectionate personality means she gets along with everyone and has lots of friends. Loves festivals, events, and other fun things.", "July 22", 152, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Natsuiro-Matsuri_pr-img_01.png", "https://www.youtube.com/channel/UCQ0UDLQCjY0rmuxCDE38FGg", "https://hololive.hololivepro.com/en/talents/natsuiro-matsuri/");
+
+-- JP GEN 2
+-- INSERT INTO vtubers(name, generation, branch, debut_date, description, birthday, height, img_url, youtube, hololive_url) 
+-- VALUES (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),
+-- (),

@@ -1,13 +1,100 @@
-{% extends 'layout.html' %}
-{% block content %}
-    <div class="container">
-        {% for row in content %}
-            <div class="card">
-                <img class="card-image" src='{{ row[4] }}' alt="Product image for the {{ row[1] }} VSCode extension.">
-                <h1 class="card-name">{{ row[1] }}</h1>
-                <p class="card-about">{{ row[3] }}</p>
-                <a class="card-link" href="{{ row[2] }}"><button class="btn">Read More</button></a>
-            </div> 
-        {% endfor %} 
+{% extends 'layout.html' %} {% block content %}
+<style>
+  p {
+    font-size: 1rem;
+  }
+</style>
+
+<input
+  type="text"
+  id="mySearch"
+  placeholder="Search.."
+  title="Type in a category"
+/>
+
+<div class="filter-buttons">
+  <a href="/index.html" class="filter-btn">All</a>
 </div>
-{% endblock %}
+
+<div class="filter-buttons">
+  <a href="/index.html?branch=Japan" class="filter-btn">JP</a>
+  <a href="/index.html?branch=English" class="filter-btn">EN</a>
+  <a href="/index.html?branch=Indonesia" class="filter-btn">ID</a>
+</div>
+
+<div class="filter-buttons">
+  <a href="/index.html?generation=Generation 0" class="filter-btn">Gen 0</a>
+  <a href="/index.html?generation=Generation 1" class="filter-btn">Gen 1</a>
+  <a href="/index.html?generation=Generation 2" class="filter-btn">Gen 2</a>
+</div>
+
+<div class="container">
+  {% for row in content %}
+  <div class="card">
+    <img class="card-image" src="{{ row[8] }}" alt="{{ row[1] }} Image." />
+    <h1 class="card-name">{{ row[1] }}</h1>
+    <p class="card-about">{{ row[2] }}</p>
+    <a class="card-link" href="{{ row[10] }}"
+      ><button class="btn">Read More</button></a
+    >
+  </div>
+  {% endfor %}
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Create a column layout with Flexbox */
+    .row {
+      display: flex;
+    }
+
+    /* Left column (menu) */
+    .left {
+      flex: 35%;
+      padding: 15px 0;
+    }
+
+    .left h2 {
+      padding-left: 8px;
+    }
+
+    /* Right column (page content) */
+    .right {
+      flex: 65%;
+      padding: 15px;
+    }
+
+    /* Style the search box */
+    #mySearch {
+      width: 100%;
+      font-size: 18px;
+      padding: 11px;
+      border: 1px solid #ddd;
+    }
+
+    /* Style the navigation menu inside the left column */
+    #myMenu {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #myMenu li a {
+      padding: 12px;
+      text-decoration: none;
+      color: black;
+      display: block;
+    }
+
+    #myMenu li a:hover {
+      background-color: #eee;
+    }
+  </style>
+  {% endblock %}
+</div>
