@@ -21,12 +21,6 @@ def index():
     branch = request.args.get("branch")
     generation = request.args.get("generation")
 
-    # q = request.args.get("q")
-    # print(q)
-
-    # if q:
-    #     data = dbHandler.listVtuberbyname(q)
-
     if branch:
         data = dbHandler.listVtuberbybranch(branch)
     elif generation:

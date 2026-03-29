@@ -33,14 +33,29 @@ function filterVtubers(event) {
   });
 }
 
-//   const input = document.getElementById("mySearch");
-//   const filter = input.value.toUpperCase();
-//   const ul = document.getElementById("myMenu");
-//   const li = ul.getElementsByTagName("li");
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdowns = document.querySelectorAll(".dropdown");
+  dropdowns.forEach((dropdown) => {
+    const button = dropdown.querySelector(".dropbtn");
+    if (button) {
+      button.addEventListener("click", myFunction);
+    }
+  });
+});
 
-//   for (let i = 0; i < li.length; i++) {
-//     const a = li[i].getElementsByTagName("a")[0];
-//     li[i].style.display =
-//       a.innerHTML.toUpperCase().indexOf(filter) > -1 ? "" : "none";
-//   }
-// }
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};

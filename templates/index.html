@@ -4,6 +4,114 @@
     font-size: 1rem;
   }
 </style>
+<!-- Click Drop Down -->
+<style>
+  .dropbtn {
+    background-color: #3498db;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover,
+  .dropbtn:focus {
+    background-color: #2980b9;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: #f1f1f1; */
+    min-width: 100px;
+    overflow: visible;
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
+
+  .show {
+    display: block;
+  }
+</style>
+
+<!-- Hover Drop Down -->
+<style>
+  .hoverdropbtn {
+    background-color: #04aa6d;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+  }
+
+  .hoverdropdown {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .hoverdropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: #f1f1f1; */
+    /* min-width: 160px; */
+    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
+    z-index: 1;
+    right: 100%;
+    top: -150%;
+  }
+
+  .hoverdropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .hoverdropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  .hoverdropdown:hover .hoverdropdown-content {
+    display: block;
+  }
+
+  .hoverdropdown:hover .hoverdropbtn {
+    background-color: #3e8e41;
+  }
+
+  .filterbtn:hover .hoverdropdown-content {
+    display: block;
+  }
+</style>
+
+<style>
+  /* Style the search box */
+  #mySearch {
+    width: 75%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    margin-top: 15px;
+  }
+</style>
 
 <input
   type="text"
@@ -12,22 +120,80 @@
   title="Type in a category"
 />
 
-<div class="filter-buttons">
-  <a href="/index.html" class="filter-btn">All</a>
+<!-- FILTER BUTTON -->
+<div class="dropdown">
+  <button class="dropbtn">Filters</button>
+  <div id="myDropdown" class="dropdown-content">
+    <div class="filter-buttons">
+      <a href="/index.html" class="filter-btn">All</a>
+    </div>
+
+    <!-- JAPANESE BRANCH -->
+    <div class="filter-buttons">
+      <div class="hoverdropdown">
+        <!-- <button class="hoverdropbtn">JP</button> -->
+        <a href="/index.html?branch=Japan" class="filter-btn">JP</a>
+        <div class="hoverdropdown-content">
+          <div class="filter-buttons">
+            <a href="/index.html?generation=Gen 0" class="filter-btn">Gen 0</a>
+            <a href="/index.html?generation=Gen 1" class="filter-btn">Gen 1</a>
+            <a href="/index.html?generation=Gen 2" class="filter-btn">Gen 2</a>
+            <a href="/index.html?generation=GAMERS" class="filter-btn"
+              >GAMERS</a
+            >
+            <a href="/index.html?generation=Gen 3" class="filter-btn">Gen 3</a>
+            <a href="/index.html?generation=Gen 4" class="filter-btn">Gen 4</a>
+            <a href="/index.html?generation=Gen 5" class="filter-btn">Gen 5</a>
+            <a href="/index.html?generation=holoX" class="filter-btn">holoX</a>
+            <a href="/index.html?generation=ReGLOSS" class="filter-btn"
+              >ReGLOSS</a
+            >
+            <a href="/index.html?generation=FLOW GLOW" class="filter-btn"
+              >FLOW GLOW</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENGLISH BRANCH -->
+    <div class="filter-buttons">
+      <div class="hoverdropdown">
+        <!-- <button class="hoverdropbtn">EN</button> -->
+        <a href="/index.html?branch=English" class="filter-btn">EN</a>
+        <div class="hoverdropdown-content">
+          <a href="/index.html?generation=Myth" class="filter-btn">Myth</a>
+          <a href="/index.html?generation=Promise" class="filter-btn"
+            >Promise</a
+          >
+          <a href="/index.html?generation=Advent" class="filter-btn">Advent</a>
+          <a href="/index.html?generation=Justice" class="filter-btn"
+            >Justice</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <!-- INDONESIAN BRANCH -->
+    <div class="filter-buttons">
+      <div class="hoverdropdown">
+        <!-- <button class="hoverdropbtn">ID</button> -->
+        <a href="/index.html?branch=Indonesia" class="filter-btn">ID</a>
+        <div class="hoverdropdown-content">
+          <a href="/index.html?generation=Area 15" class="filter-btn"
+            >Area 15</a
+          >
+          <a href="/index.html?generation=Holoro" class="filter-btn">Holoro</a>
+          <a href="/index.html?generation=HoloH3ro" class="filter-btn"
+            >HoloH3ro</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="filter-buttons">
-  <a href="/index.html?branch=Japan" class="filter-btn">JP</a>
-  <a href="/index.html?branch=English" class="filter-btn">EN</a>
-  <a href="/index.html?branch=Indonesia" class="filter-btn">ID</a>
-</div>
-
-<div class="filter-buttons">
-  <a href="/index.html?generation=Generation 0" class="filter-btn">Gen 0</a>
-  <a href="/index.html?generation=Generation 1" class="filter-btn">Gen 1</a>
-  <a href="/index.html?generation=Generation 2" class="filter-btn">Gen 2</a>
-</div>
-
+<!-- CARDS FOR VTUBERS -->
 <div class="container">
   {% for row in content %}
   <div class="card">
@@ -39,62 +205,6 @@
     >
   </div>
   {% endfor %}
-
-  <style>
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    /* Create a column layout with Flexbox */
-    .row {
-      display: flex;
-    }
-
-    /* Left column (menu) */
-    .left {
-      flex: 35%;
-      padding: 15px 0;
-    }
-
-    .left h2 {
-      padding-left: 8px;
-    }
-
-    /* Right column (page content) */
-    .right {
-      flex: 65%;
-      padding: 15px;
-    }
-
-    /* Style the search box */
-    #mySearch {
-      width: 100%;
-      font-size: 18px;
-      padding: 11px;
-      border: 1px solid #ddd;
-    }
-
-    /* Style the navigation menu inside the left column */
-    #myMenu {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    #myMenu li a {
-      padding: 12px;
-      text-decoration: none;
-      color: black;
-      display: block;
-    }
-
-    #myMenu li a:hover {
-      background-color: #eee;
-    }
-  </style>
-  {% endblock %}
 </div>
+
+{% endblock %}

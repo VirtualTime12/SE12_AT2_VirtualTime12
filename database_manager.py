@@ -5,7 +5,7 @@ def listVtuberbygeneration(generation):
     with sql.connect("database/data_source.db") as con:
         cur = con.cursor()
         data = cur.execute(
-            "SELECT * FROM vtubers WHERE generation = ?", (generation,)
+            "SELECT * FROM vtubers WHERE generation LIKE ?", (f"%{generation}%",)
         ).fetchall()
     return data
 
@@ -14,18 +14,9 @@ def listVtuberbybranch(branch):
     with sql.connect("database/data_source.db") as con:
         cur = con.cursor()
         data = cur.execute(
-            "SELECT * FROM vtubers WHERE branch = ?", (branch,)
+            "SELECT * FROM vtubers WHERE branch LIKE ?", (branch,)
         ).fetchall()
     return data
-
-
-# def listVtuberbyname(name):
-#     with sql.connect("database/data_source.db") as con:
-#         cur = con.cursor()
-#         data = cur.execute(
-#             "SELECT * FROM vtubers WHERE name LIKE ?", (name,)
-#         ).fetchall()
-#     return data
 
 
 def listVtubers():
