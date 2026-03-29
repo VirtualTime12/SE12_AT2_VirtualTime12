@@ -27,6 +27,17 @@ def listVtubers():
     return data
 
 
+def get_vtuber(id):
+    con = sql.connect("database/data_source.db")
+    cur = con.cursor()
+    vtuber = cur.execute("SELECT * FROM vtubers WHERE id = ?", (id,)).fetchone()
+
+    if vtuber is None:
+        return "VTuber not found", 404
+    else:
+        return vtuber
+
+
 def insertContact(email, name):
     con = sql.connect("database/data_source.db")
     cur = con.cursor()

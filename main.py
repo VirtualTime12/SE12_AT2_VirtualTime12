@@ -10,6 +10,13 @@ def home():
     return render_template("/home.html")
 
 
+@app.route("/vtuber/<int:id>")
+def vtuber_page(id):
+
+    vtuber = dbHandler.get_vtuber(id)
+    return render_template("vtuber.html", vtuber=vtuber)
+
+
 @app.route("/about.html", methods=["GET"])
 def about():
     return render_template("/about.html")

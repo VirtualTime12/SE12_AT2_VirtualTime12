@@ -1,0 +1,16 @@
+{% extends 'layout.html' %} {% block content %}
+<h1>{{ vtuber[1] }}</h1>
+
+<img src="{{ vtuber[8] }}" alt="VTuber Image" width="300" />
+
+<p><strong>Branch:</strong> {{ vtuber[3] }}</p>
+<p><strong>Generation:</strong> {{ vtuber[2] }}</p>
+<p><strong>Debut Date:</strong> {{ vtuber[4] }}</p>
+<p><strong>Birthday:</strong> {{ vtuber[6] }}</p>
+<p><strong>Height:</strong> {{ vtuber[7] }} cm</p>
+
+<a href="{{ vtuber[9] }}">Youtube</a>
+<a href="{{ vtuber[10] }}">Official Hololive Profile Page</a>
+
+<p>{{ vtuber[5] }}</p>
+{% endblock %}
