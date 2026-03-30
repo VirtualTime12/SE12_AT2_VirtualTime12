@@ -13,6 +13,7 @@
     font-size: 16px;
     border: none;
     cursor: pointer;
+    border-radius: 25px;
   }
 
   .dropbtn:hover,
@@ -28,11 +29,11 @@
   .dropdown-content {
     display: none;
     position: absolute;
-    /* background-color: #f1f1f1; */
+    background-color: #f1f1f1;
     min-width: 100px;
     overflow: visible;
-    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
     z-index: 1;
+    left: -15%;
   }
 
   .dropdown-content a {
@@ -64,17 +65,22 @@
   .hoverdropdown {
     position: relative;
     display: inline-flex;
+    align-items: center;
   }
 
   .hoverdropdown-content {
     display: none;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.5rem;
+    padding: 0.25rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
     position: absolute;
-    /* background-color: #f1f1f1; */
-    /* min-width: 160px; */
-    /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
-    z-index: 1;
     right: 100%;
-    top: -150%;
+    min-height: 100%;
+    width: 20rem;
+    z-index: 1;
   }
 
   .hoverdropdown-content a {
@@ -84,16 +90,8 @@
     display: block;
   }
 
-  .hoverdropdown-content a:hover {
-    background-color: #ddd;
-  }
-
   .hoverdropdown:hover .hoverdropdown-content {
-    display: block;
-  }
-
-  .hoverdropdown:hover .hoverdropbtn {
-    background-color: #3e8e41;
+    display: grid;
   }
 
   .filterbtn:hover .hoverdropdown-content {
@@ -162,14 +160,18 @@
         <!-- <button class="hoverdropbtn">EN</button> -->
         <a href="/index.html?branch=English" class="filter-btn">EN</a>
         <div class="hoverdropdown-content">
-          <a href="/index.html?generation=Myth" class="filter-btn">Myth</a>
-          <a href="/index.html?generation=Promise" class="filter-btn"
-            >Promise</a
-          >
-          <a href="/index.html?generation=Advent" class="filter-btn">Advent</a>
-          <a href="/index.html?generation=Justice" class="filter-btn"
-            >Justice</a
-          >
+          <div class="filter-buttons">
+            <a href="/index.html?generation=Myth" class="filter-btn">Myth</a>
+            <a href="/index.html?generation=Promise" class="filter-btn"
+              >Promise</a
+            >
+            <a href="/index.html?generation=Advent" class="filter-btn"
+              >Advent</a
+            >
+            <a href="/index.html?generation=Justice" class="filter-btn"
+              >Justice</a
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -180,15 +182,23 @@
         <!-- <button class="hoverdropbtn">ID</button> -->
         <a href="/index.html?branch=Indonesia" class="filter-btn">ID</a>
         <div class="hoverdropdown-content">
-          <a href="/index.html?generation=Area 15" class="filter-btn"
-            >Area 15</a
-          >
-          <a href="/index.html?generation=Holoro" class="filter-btn">Holoro</a>
-          <a href="/index.html?generation=HoloH3ro" class="filter-btn"
-            >HoloH3ro</a
-          >
+          <div class="filter-buttons">
+            <a href="/index.html?generation=Area 15" class="filter-btn"
+              >Area 15</a
+            >
+            <a href="/index.html?generation=Holoro" class="filter-btn"
+              >Holoro</a
+            >
+            <a href="/index.html?generation=HoloH3ro" class="filter-btn"
+              >HoloH3ro</a
+            >
+          </div>
         </div>
       </div>
+    </div>
+
+    <div class="filter-buttons">
+      <a href="/index.html?graduated=1" class="filter-btn">GRAD</a>
     </div>
   </div>
 </div>
@@ -198,7 +208,11 @@
   {% for row in content %}
   <div class="card">
     <img class="card-image" src="{{ row[8] }}" alt="{{ row[1] }} Image." />
+    {% if row[11] == 1 %}
+    <h1 class="card-name">{{ row[1] }} [GRAD]</h1>
+    {% else %}
     <h1 class="card-name">{{ row[1] }}</h1>
+    {% endif %}
     <p class="card-about">{{ row[2] }}</p>
     <a class="card-link" href="vtuber/{{ row[0] }}">
       <button class="btn">Read More</button></a

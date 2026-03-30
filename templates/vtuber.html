@@ -1,16 +1,108 @@
 {% extends 'layout.html' %} {% block content %}
-<h1>{{ vtuber[1] }}</h1>
+<style>
+  .image-container {
+    box-shadow: none;
+  }
+  .button-container {
+    padding: 20px 20px;
+    font-size: 1.5rem;
+    margin-right: 10px;
+  }
+  body {
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
 
-<img src="{{ vtuber[8] }}" alt="VTuber Image" width="300" />
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Segoe UI", sans-serif;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  .styled-table th,
+  .styled-table td {
+    padding: 14px 18px;
+    text-align: left;
+  }
+  .styled-table tbody tr {
+    border-bottom: 1px solid #e0e0e0;
+  }
 
-<p><strong>Branch:</strong> {{ vtuber[3] }}</p>
-<p><strong>Generation:</strong> {{ vtuber[2] }}</p>
-<p><strong>Debut Date:</strong> {{ vtuber[4] }}</p>
-<p><strong>Birthday:</strong> {{ vtuber[6] }}</p>
-<p><strong>Height:</strong> {{ vtuber[7] }} cm</p>
+  .banner-container {
+    height: 200px;
+    margin-bottom: 0;
+  }
+</style>
 
-<a href="{{ vtuber[9] }}">Youtube</a>
-<a href="{{ vtuber[10] }}">Official Hololive Profile Page</a>
+<div class="banner-container">
+  <img
+    src="{{ vtuber[12] }}"
+    alt="{{ vtuber[1] }} Banner Image"
+    class="banner-image"
+  />
+</div>
 
-<p>{{ vtuber[5] }}</p>
+<div class="main-container">
+  <div class="text-image-container">
+    <img
+      src="{{ vtuber[8] }}"
+      alt="{{ vtuber[1] }} Image"
+      class="image-container"
+    />
+    <div class="text-container">
+      {% if vtuber[11] == 1 %}
+      <h1>{{ vtuber[1] }} [GRAD]</h1>
+      {% else %}
+      <h1>{{ vtuber[1] }}</h1>
+      {% endif %}
+      <p>{{ vtuber[5] }}</p>
+
+      <table class="styled-table">
+        <tbody>
+          <tr>
+            <th>Branch:</th>
+            <td>{{ vtuber[3] }}</td>
+          </tr>
+          <tr>
+            <th>Generation:</th>
+            <td>{{ vtuber[2] }}</td>
+          </tr>
+          <tr>
+            <th>Debut Date:</th>
+            <td>{{ vtuber[4] }}</td>
+          </tr>
+          <tr>
+            <th>Birthday:</th>
+            <td>{{ vtuber[6] }}</td>
+          </tr>
+          <tr>
+            <th>Height:</th>
+            <td>{{ vtuber[7] }} cm</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="{{ vtuber[9] }}">
+        <button class="button-container">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/960px-YouTube_full-color_icon_%282017%29.svg.png"
+            class="icon"
+          />YouTube
+        </button>
+      </a>
+      <a href="{{ vtuber[10] }}">
+        <button class="button-container">
+          <img
+            src="https://logos-world.net/wp-content/uploads/2022/07/Hololive-Production-Symbol.png"
+            class="icon"
+          />Hololive Page
+        </button>
+      </a>
+    </div>
+  </div>
+</div>
 {% endblock %}

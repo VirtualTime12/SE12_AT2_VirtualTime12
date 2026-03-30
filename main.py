@@ -27,13 +27,19 @@ def about():
 def index():
     branch = request.args.get("branch")
     generation = request.args.get("generation")
+    graduated = request.args.get("graduated")
 
     if branch:
         data = dbHandler.listVtuberbybranch(branch)
     elif generation:
         data = dbHandler.listVtuberbygeneration(generation)
+    elif graduated:
+        data = dbHandler.listVtuberbygraduated(graduated)
     else:
         data = dbHandler.listVtubers()
+
+    # Sort graduated Vtubers after active Vtubers
+    data.sort(key=lambda row: (row[11]))
     return render_template("/index.html", content=data)
 
 

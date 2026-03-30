@@ -19,6 +19,15 @@ def listVtuberbybranch(branch):
     return data
 
 
+def listVtuberbygraduated(graduated):
+    with sql.connect("database/data_source.db") as con:
+        cur = con.cursor()
+        data = cur.execute(
+            "SELECT * FROM vtubers WHERE graduated = ?", (graduated,)
+        ).fetchall()
+    return data
+
+
 def listVtubers():
     con = sql.connect("database/data_source.db")
     cur = con.cursor()

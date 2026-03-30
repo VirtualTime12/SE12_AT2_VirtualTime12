@@ -16,6 +16,12 @@ main {
   /* padding: 0.5rem; */
   text-align: center;
 }
+.icon {
+  max-height: 15px;
+  width: auto;
+  align-self: center;
+  margin-right: 10px;
+}
 .main-container {
   display: flex;
   flex-direction: column;
@@ -63,26 +69,12 @@ main {
 .button-container:active {
   transform: scale(0.95);
 }
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .main-container {
-    flex-direction: column;
-    padding: 20px;
-  }
-  .text-image-container {
-    flex-direction: column;
-  }
-  .text-container {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  .image-container {
-    max-width: 90%;
-  }
-  .button-container {
-    padding: 15px 40px;
-    font-size: 1.5rem;
-  }
+.image-row {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
 }
 
 nav {
@@ -92,7 +84,9 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: lightgray;
+  background: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-08.jpg")
+    no-repeat;
+  background-size: cover;
 }
 nav img {
   height: 75px;
@@ -104,21 +98,38 @@ nav ul {
   font-size: 1.25rem;
 }
 nav li {
-  margin-right: 1rem;
+  /* margin-right: 1rem; */
+  border-right: 2px solid;
+  padding: 0 10px;
 }
 nav ul li a {
   text-decoration-line: none;
   text-transform: uppercase;
   color: #393b45;
+  transition: ease-in-out 200ms;
 }
 nav ul li a:hover {
-  color: #14e6dd;
+  color: #a9aab1;
+  transition: ease-in-out 200ms;
 }
 nav h1 {
   color: #106d69;
   margin-bottom: 0.5rem;
   font-size: 2.5rem;
 }
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #334155;
+  margin-top: 40px;
+  color: #94a3b8;
+}
+.footer p {
+  font-size: 1rem;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
@@ -195,7 +206,7 @@ form {
 }
 .banner-container {
   width: 100%;
-  height: 550px;
+  height: auto;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -208,9 +219,6 @@ form {
   object-fit: cover;
   filter: blur(0px) brightness(0.7);
   transform: scale(1);
-  transition:
-    filter 0.5s ease,
-    transform 0.5s ease;
 }
 .banner-content {
   position: absolute;
@@ -218,10 +226,13 @@ form {
   color: white;
   text-align: center;
 }
-/* .banner-container:hover {
-  filter: blur(8px) brightness(0.5);
-  transform: scale(1.1);
-} */
+.banner-content h1 {
+  font-size: 5rem;
+}
+.banner-content p {
+  font-size: 2rem;
+}
+
 .filter-buttons {
   display: flex;
   justify-content: center;
@@ -232,10 +243,11 @@ form {
 
 .filter-btn {
   text-decoration: none;
+  min-width: 75px;
   padding: 0.5rem 1.5rem;
-  background: hsl(177, 82%, 48%);
+  background: #3ebbc7;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 25px;
   font-weight: 600;
   transition: all 0.25s ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -255,4 +267,29 @@ form {
 .filter-btn:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .text-image-container {
+    flex-direction: column;
+  }
+  .text-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .image-container {
+    max-width: 90%;
+  }
+  .button-container {
+    padding: 15px 40px;
+    font-size: 1.5rem;
+  }
+  .image-row {
+    height: 50px;
+  }
 }

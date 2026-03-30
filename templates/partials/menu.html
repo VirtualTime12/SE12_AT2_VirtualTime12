@@ -1,3 +1,8 @@
+<style>
+  .icon {
+    margin-left: 0;
+  }
+</style>
 <nav>
   <a href="{{ url_for('home') }}">
     <img
@@ -7,9 +12,30 @@
   </a>
   <!-- <h1>Hololive</h1> -->
   <ul class="topnav">
-    <li><a href="{{ url_for('home') }}">Home</a></li>
-    <li><a href="{{ url_for('add') }}">Add me</a></li>
-    <li><a href="{{ url_for('about') }}">About</a></li>
-    <li><a href="{{ url_for('index') }}">Talents</a></li>
+    <li>
+      <a href="{{ url_for('home') }}">
+        <img
+          src="https://hololive.hololivepro.com/wp-content/themes/hololive/images/icon_home.png"
+          class="icon"
+        />Home
+      </a>
+    </li>
+    <li>
+      <a href="{{ url_for('index') }}">
+        <img
+          src="https://logos-world.net/wp-content/uploads/2022/07/Hololive-Production-Symbol.png"
+          class="icon"
+          style="margin-right: 2px"
+        />Talents</a
+      >
+    </li>
+    <li>
+      <a href="{{ url_for('about') }}">
+        <img src="https://i.sstatic.net/M6ezc.png" class="icon" />About</a
+      >
+    </li>
+    <li style="border-right: none">
+      <a href="{{ url_for('add') }}">Add me</a>
+    </li>
   </ul>
 </nav>

@@ -1,3 +1,180 @@
 {% extends 'layout.html' %} {% block content %}
-<p>Testing 123</p>
+<style>
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.6;
+  }
+  h2 {
+    font-size: 3rem;
+    color: #3ebbc7;
+  }
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  .image-container {
+    height: 200px;
+    width: auto;
+  }
+
+  /* Lists */
+  ul {
+    margin-left: 20px;
+  }
+
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  /* FAQ Section */
+  .faq {
+    margin-bottom: 20px;
+  }
+
+  .faq h3 {
+    color: #7dd3fc;
+    margin-bottom: 5px;
+  }
+</style>
+
+<!-- BANNER -->
+<div class="banner-container">
+  <img
+    src="https://static.wikitide.net/hololivewiki/thumb/b/b6/Countdown_Live_2023%E2%96%B72024_Hololive_Shuffle_Medley_banner.Webp/1000px-Countdown_Live_2023%E2%96%B72024_Hololive_Shuffle_Medley_banner.Webp.png"
+    alt="Hololive Image"
+    class="banner-image"
+  />
+  <div class="banner-content">
+    <h1>About</h1>
+    <p>Explore what Hololive has to offer!</p>
+  </div>
+</div>
+
+<div class="main-container">
+  <h2>What is Hololive?</h2>
+  <p>
+    Hololive is a Vtuber management agency that is affiliated with over 70
+    different talents from Japanese, English, and Indonesian speaking
+    backgrounds, and having over 90 million Youtube subscribers across all its
+    talents.
+  </p>
+
+  <div class="image-row">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcbyrwz8d_DmcKajemP9O3PgYARuT0ZdecIw&s"
+      class="image-container"
+    />
+    <img
+      src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/hololiveerror1_1.png"
+      class="image-container"
+    />
+    <img
+      src="https://hololivepro.com/wp-content/uploads/2025/05/about_talent10.png"
+      class="image-container"
+    />
+  </div>
+
+  <p>
+    With COVER Corporation's VR/AR technology, Hololive talents provide various
+    experiences ranging from gaming streams to chatting streams to art streams
+    to even hosting their own live concerts, forming a stable community that
+    connects fans, creators, and talents all around the world
+  </p>
+</div>
+
+<div class="image-row">
+  <img
+    src="https://www.dexerto.com/cdn-image/wp-content/uploads/2024/01/16/hololive-members-1.jpg?width=1200&quality=60&format=auto"
+    class="image-container"
+  />
+  <img
+    src="https://i.ytimg.com/vi/hcSuSzbj38M/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBv7hb677cG9E4ah9jPK-_q6GFIrg"
+    class="image-container"
+  />
+</div>
+
+<div class="main-container">
+  <h2>About This Site</h2>
+  <p>
+    This Hololive Catalogue is a Progressive Web Application (PWA) built using
+    Python Flask. It is designed to provide a clean, structured, searchable and
+    filterable catalogue of the Hololive virtual talents.
+  </p>
+  <p>
+    This site aims to make it easy for users to browse, discover, and learn more
+    about their favourite Hololive Vtuber, including their generation, debut
+    date, personality and physical traits, and other key details. The profile
+    page of each talent also includes links to their Youtube page and Profile
+    page on the official Hololive website, which includes further detail on each
+    talent.
+  </p>
+</div>
+
+<div class="image-row">
+  <img
+    src="https://hololivepro.com/wp-content/uploads/2024/03/hololive_infographic_pc.png"
+    style="box-shadow: none; height: 500px; margin: 50px"
+  />
+</div>
+
+<div class="main-container">
+  <!-- FAQ Section -->
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq">
+    <h3>What is a Vtuber?</h3>
+    <p>
+      Vtubers are content creators who use animated anime avatars to interact
+      with audiences through platforms like Youtube and Twitch.
+    </p>
+    <p>
+      Hololive is an example of a Vtuber agency, a company that manages a large
+      group of multiple different Vtuber talents.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>Is this an official Hololive website?</h3>
+    <p>
+      No. This is a fan-made project built for personal educational purposes and
+      is not affiliated with Hololive Production.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>How is the data stored?</h3>
+    <p>
+      All Vtuber information is stored in a structured SQL database and
+      dynamically rendered using Flask. All data within this Vtuber database is
+      publicly available on the official Hololive website.
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>Why can't I add a new entry to this catalogue?</h3>
+    <p>
+      Hololive has a finite number of Vtubers. There simply is no need for
+      additional entries when it already has everyone
+    </p>
+  </div>
+
+  <div class="faq">
+    <h3>
+      Why isn't Holostars (The boys) or the Hololive Staff documented here?
+    </h3>
+    <p>
+      For the sake of simplicity and time restraints, Holostars and the Staff
+      have been left out of this database. The main Hololive branches (ie: The
+      females) are the most well known amongst fans anyway.
+    </p>
+  </div>
+</div>
 {% endblock %}
