@@ -35,7 +35,17 @@
       >
     </li>
     <li style="border-right: none">
-      <a href="{{ url_for('add') }}">Add me</a>
+      <div class="hoverdropdown">
+        <!-- <button class="hoverdropbtn">JP</button> -->
+        <a class="profile-dropdown">Profile</a>
+        <div class="hoverdropdown-content" style="top: 100%; right: 0; width: auto">
+          {% if logged_in %}
+          <a href="/favourites.html">Favourites</a>
+          <a href="/logout">Logout</a>  
+          {% else %}
+          <a href="/login.html">Login</a>
+          {% endif %}
+        </div>
     </li>
   </ul>
 </nav>

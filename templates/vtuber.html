@@ -6,7 +6,10 @@
   .button-container {
     padding: 20px 20px;
     font-size: 1.5rem;
-    margin-right: 10px;
+    margin: 10px;
+  }
+  a {
+    text-decoration: none;
   }
   body {
     font-size: 1.5rem;
@@ -33,8 +36,14 @@
   }
 
   .banner-container {
-    height: 200px;
+    max-height: 200px;
     margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .banner-container {
+      max-height: 125px;
+    }
   }
 </style>
 
@@ -102,6 +111,15 @@
           />Hololive Page
         </button>
       </a>
+      {% if is_favourited %}
+      <a href="{{ url_for('unfavourite', vtuber_id=vtuber[0]) }}">
+        <div class="button-container">❤️ Remove from Favourites</div>
+      </a>
+      {% else %}
+      <a href="{{ url_for('favourite', vtuber_id=vtuber[0]) }}">
+        <div class="button-container">🤍 Add to Favourites</div>
+      </a>
+      {% endif %}
     </div>
   </div>
 </div>
