@@ -113,11 +113,11 @@
       </a>
       {% if is_favourited %}
       <a href="{{ url_for('unfavourite', vtuber_id=vtuber[0]) }}">
-        <div class="button-container">❤️ Remove from Favourites</div>
+        <button class="button-container">❤️ Remove from Favourites</button>
       </a>
       {% else %}
       <a href="{{ url_for('favourite', vtuber_id=vtuber[0]) }}">
-        <div class="button-container">🤍 Add to Favourites</div>
+        <button class="button-container">🤍 Add to Favourites</button>
       </a>
       {% endif %}
     </div>

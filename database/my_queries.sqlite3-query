@@ -43,7 +43,7 @@
 -- ("Shirakami Fubuki", "Gen 1/GAMERS", "Japan", "June 1, 2018", "White-haired animal-eared otaku fox. She loves talking with people and will be happy if you give her the time of day. She aims to become a top otaku idol while enjoying each and every day.", "October 5", 155, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Shirakami-Fubuki_pr-img_01.webp", "https://www.youtube.com/channel/UCdn5BQ06XqgXoAxIhbqw5Rg", "https://hololive.hololivepro.com/en/talents/shirakami-fubuki/", FALSE, "https://yt3.googleusercontent.com/sZR7H8ye0MmNeLXg70SypSOH45r_OAgA-IbJrqKRmwk4T1CkWAh5g0n6kGv5t8o29Swcc1DiUg=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"),
 -- ("Natsuiro Matsuri", "Gen 1", "Japan", "June 1, 2018", "A rookie member of her school cheerleading team. Her cheerful, energetic, and affectionate personality means she gets along with everyone and has lots of friends. Loves festivals, events, and other fun things.", "July 22", 152, "https://hololive.hololivepro.com/wp-content/uploads/2020/06/Natsuiro-Matsuri_pr-img_01.png", "https://www.youtube.com/channel/UCQ0UDLQCjY0rmuxCDE38FGg", "https://hololive.hololivepro.com/en/talents/natsuiro-matsuri/", FALSE, "https://yt3.googleusercontent.com/keU8I8VqscSvZYS5FycHbpoQ_ZjAZGLQewhC4KcV-e8LY9R9N1yvzfWwdo66rawJ_O2QVTqWrw=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj");
 
--- UPDATE vtubers SET banner_url = "https://pbs.twimg.com/profile_banners/1363705980261855232/1677751177/1080x360" WHERE name = "IRyS";
+UPDATE vtubers SET img_url = "https://hololive.hololivepro.com/wp-content/uploads/2020/07/Kaela-Kovalskia_pr-img_02.webp" WHERE name = "Kaela Kovalskia";
 
 -- INSERT INTO vtubers(name, generation, branch, debut_date, description, birthday, height, img_url, youtube, hololive_url) 
 
@@ -160,4 +160,7 @@
 -- DROP TABLE users;
 -- CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, email TEXT NOT NULL, password TEXT NOT NULL, UNIQUE(email));
 
-CREATE TABLE favourites(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, vtuber_id INTEGER NOT NULL, UNIQUE(user_id, vtuber_id), FOREIGN KEY(user_id) REFERENCES users(id), FOREIGN KEY(vtuber_id) REFERENCES vtubers(id));
+-- DROP TABLE favourites;
+-- CREATE TABLE favourites(id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER NOT NULL, vtuber_id INTEGER NOT NULL, UNIQUE(user_id, vtuber_id), FOREIGN KEY(user_id) REFERENCES users(id), FOREIGN KEY(vtuber_id) REFERENCES vtubers(id));
+
+-- DROP TABLE contact_list;

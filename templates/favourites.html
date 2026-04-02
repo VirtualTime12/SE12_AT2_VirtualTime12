@@ -46,30 +46,44 @@
   <button class="dropbtn">Filters</button>
   <div id="myDropdown" class="dropdown-content">
     <div class="filter-buttons">
-      <a href="/index.html" class="filter-btn">All</a>
+      <a href="/favourites.html" class="filter-btn">All</a>
     </div>
 
     <!-- JAPANESE BRANCH -->
     <div class="filter-buttons">
       <div class="hoverdropdown">
         <!-- <button class="hoverdropbtn">JP</button> -->
-        <a href="/index.html?branch=Japan" class="filter-btn">JP</a>
+        <a href="/favourites.html?branch=Japan" class="filter-btn">JP</a>
         <div class="hoverdropdown-content">
           <div class="filter-buttons">
-            <a href="/index.html?generation=Gen 0" class="filter-btn">Gen 0</a>
-            <a href="/index.html?generation=Gen 1" class="filter-btn">Gen 1</a>
-            <a href="/index.html?generation=Gen 2" class="filter-btn">Gen 2</a>
-            <a href="/index.html?generation=GAMERS" class="filter-btn"
+            <a href="/favourites.html?generation=Gen 0" class="filter-btn"
+              >Gen 0</a
+            >
+            <a href="/favourites.html?generation=Gen 1" class="filter-btn"
+              >Gen 1</a
+            >
+            <a href="/favourites.html?generation=Gen 2" class="filter-btn"
+              >Gen 2</a
+            >
+            <a href="/favourites.html?generation=GAMERS" class="filter-btn"
               >GAMERS</a
             >
-            <a href="/index.html?generation=Gen 3" class="filter-btn">Gen 3</a>
-            <a href="/index.html?generation=Gen 4" class="filter-btn">Gen 4</a>
-            <a href="/index.html?generation=Gen 5" class="filter-btn">Gen 5</a>
-            <a href="/index.html?generation=holoX" class="filter-btn">holoX</a>
-            <a href="/index.html?generation=ReGLOSS" class="filter-btn"
+            <a href="/favourites.html?generation=Gen 3" class="filter-btn"
+              >Gen 3</a
+            >
+            <a href="/favourites.html?generation=Gen 4" class="filter-btn"
+              >Gen 4</a
+            >
+            <a href="/favourites.html?generation=Gen 5" class="filter-btn"
+              >Gen 5</a
+            >
+            <a href="/favourites.html?generation=holoX" class="filter-btn"
+              >holoX</a
+            >
+            <a href="/favourites.html?generation=ReGLOSS" class="filter-btn"
               >ReGLOSS</a
             >
-            <a href="/index.html?generation=FLOW GLOW" class="filter-btn"
+            <a href="/favourites.html?generation=FLOW GLOW" class="filter-btn"
               >FLOW GLOW</a
             >
           </div>
@@ -81,17 +95,19 @@
     <div class="filter-buttons">
       <div class="hoverdropdown">
         <!-- <button class="hoverdropbtn">EN</button> -->
-        <a href="/index.html?branch=English" class="filter-btn">EN</a>
+        <a href="/favourites.html?branch=English" class="filter-btn">EN</a>
         <div class="hoverdropdown-content">
           <div class="filter-buttons">
-            <a href="/index.html?generation=Myth" class="filter-btn">Myth</a>
-            <a href="/index.html?generation=Promise" class="filter-btn"
+            <a href="/favourites.html?generation=Myth" class="filter-btn"
+              >Myth</a
+            >
+            <a href="/favourites.html?generation=Promise" class="filter-btn"
               >Promise</a
             >
-            <a href="/index.html?generation=Advent" class="filter-btn"
+            <a href="/favourites.html?generation=Advent" class="filter-btn"
               >Advent</a
             >
-            <a href="/index.html?generation=Justice" class="filter-btn"
+            <a href="/favourites.html?generation=Justice" class="filter-btn"
               >Justice</a
             >
           </div>
@@ -103,16 +119,16 @@
     <div class="filter-buttons">
       <div class="hoverdropdown">
         <!-- <button class="hoverdropbtn">ID</button> -->
-        <a href="/index.html?branch=Indonesia" class="filter-btn">ID</a>
+        <a href="/favourites.html?branch=Indonesia" class="filter-btn">ID</a>
         <div class="hoverdropdown-content">
           <div class="filter-buttons">
-            <a href="/index.html?generation=Area 15" class="filter-btn"
+            <a href="/favourites.html?generation=Area 15" class="filter-btn"
               >Area 15</a
             >
-            <a href="/index.html?generation=Holoro" class="filter-btn"
+            <a href="/favourites.html?generation=Holoro" class="filter-btn"
               >Holoro</a
             >
-            <a href="/index.html?generation=HoloH3ro" class="filter-btn"
+            <a href="/favourites.html?generation=HoloH3ro" class="filter-btn"
               >HoloH3ro</a
             >
           </div>
@@ -121,15 +137,9 @@
     </div>
 
     <div class="filter-buttons">
-      <a href="/index.html?graduated=1" class="filter-btn">GRAD</a>
+      <a href="/favourites.html?graduated=1" class="filter-btn">GRAD</a>
     </div>
 
-    <div class="filter-buttons">
-      {% if logged_in %}
-      <a href="/favourites.html" class="filter-btn">Favourites</a>
-      {% else %}
-      <a href="/login.html" class="filter-btn">Favourites</a>
-      {% endif %}
     </div>
   </div>
 </div>
@@ -138,16 +148,19 @@
 <div class="container">
   {% for row in content %}
   <div class="card">
-    <img class="card-image" src="{{ row[8] }}" alt="{{ row[1] }} Image." />
-    {% if row[11] == 1 %}
-    <h1 class="card-name">{{ row[1] }} [GRAD]</h1>
-    {% else %}
-    <h1 class="card-name">{{ row[1] }}</h1>
-    {% endif %}
-    <p class="card-about">{{ row[2] }}</p>
-    <a class="card-link" href="vtuber/{{ row[0] }}">
-      <button class="btn">Read More</button></a
+    <a
+      class="card-link"
+      style="text-decoration: none; color: black"
+      href="vtuber/{{ row[0] }}"
     >
+      <img class="card-image" src="{{ row[8] }}" alt="{{ row[1] }} Image." />
+      {% if row[11] == 1 %}
+      <h1 class="card-name">{{ row[1] }} [GRAD]</h1>
+      {% else %}
+      <h1 class="card-name">{{ row[1] }}</h1>
+      {% endif %}
+      <p class="card-about">{{ row[2] }}</p>
+    </a>
   </div>
   {% endfor %}
 </div>

@@ -1,8 +1,9 @@
 from flask import Flask, render_template, redirect, request, session
 import database_manager as dbHandler
+import os
 
 app = Flask(__name__)
-app.secret_key = "TESTING123"
+app.secret_key = str(os.environ.get("FLASK_SECRET_KEY"))
 
 
 def logged_in():
@@ -62,6 +63,7 @@ def signup():
     if request.method == "POST":
         email = request.form["email"]
         password = request.form["password"]
+
         dbHandler.insertUser(email, password)
         return render_template(
             "/login.html",
@@ -102,6 +104,20 @@ def favourites():
         return redirect("/login.html")
     else:
         content = dbHandler.get_favourites(session["user_id"])
+
+        branch = request.args.get("branch")
+        generation = request.args.get("generation")
+        graduated = request.args.get("graduated")
+
+        if branch:
+            content = [vtuber for vtuber in content if vtuber[3] == branch]
+        elif generation:
+            content = [vtuber for vtuber in content if vtuber[2] == generation]
+        elif graduated:
+            content = [vtuber for vtuber in content if vtuber[11] == int(graduated)]
+
+        # Sort graduated Vtubers after active Vtubers
+        content.sort(key=lambda row: (row[11]))
 
         return render_template(
             "favourites.html", logged_in=logged_in(), content=content

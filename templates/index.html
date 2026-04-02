@@ -122,14 +122,6 @@
     <div class="filter-buttons">
       <a href="/index.html?graduated=1" class="filter-btn">GRAD</a>
     </div>
-
-    <div class="filter-buttons">
-      {% if logged_in %}
-      <a href="/favourites.html" class="filter-btn">Favourites</a>
-      {% else %}
-      <a href="/login.html" class="filter-btn">Favourites</a>
-      {% endif %}
-    </div>
   </div>
 </div>
 
@@ -137,16 +129,19 @@
 <div class="container">
   {% for row in content %}
   <div class="card">
-    <img class="card-image" src="{{ row[8] }}" alt="{{ row[1] }} Image." />
-    {% if row[11] == 1 %}
-    <h1 class="card-name">{{ row[1] }} [GRAD]</h1>
-    {% else %}
-    <h1 class="card-name">{{ row[1] }}</h1>
-    {% endif %}
-    <p class="card-about">{{ row[2] }}</p>
-    <a class="card-link" href="vtuber/{{ row[0] }}">
-      <button class="btn">Read More</button></a
+    <a
+      class="card-link"
+      style="text-decoration: none; color: black"
+      href="vtuber/{{ row[0] }}"
     >
+      <img class="card-image" src="{{ row[8] }}" alt="{{ row[1] }} Image." />
+      {% if row[11] == 1 %}
+      <h1 class="card-name">{{ row[1] }} [GRAD]</h1>
+      {% else %}
+      <h1 class="card-name">{{ row[1] }}</h1>
+      {% endif %}
+      <p class="card-about">{{ row[2] }}</p>
+    </a>
   </div>
   {% endfor %}
 </div>
