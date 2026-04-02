@@ -13,6 +13,11 @@ def logged_in():
         return False
 
 
+@app.route("/serviceworker.js")
+def sw():
+    return app.send_static_file("js/serviceworker.js")
+
+
 @app.route("/home.html", methods=["GET"])
 @app.route("/", methods=["POST", "GET"])
 def home():
@@ -145,4 +150,4 @@ def unfavourite(vtuber_id):
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=False, host="0.0.0.0", port=5000)
